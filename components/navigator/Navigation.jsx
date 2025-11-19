@@ -9,7 +9,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 
 const Navigation = () => {
-  // const base = "{`${process.env.NODE_ENV === "production" ? "/next-ekjahan" : ""}";
   return (
     <>
       {/* TOP SOCIAL MEDIA SECTION */}
@@ -65,9 +64,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center px-6 h-[40px]">
           <Link href="/">
             <img
-              src={`${
-                process.env.NODE_ENV === "production" ? "/next-ekjahan" : ""
-              }/images/ekjahan-bg.png`}
+              src="/images/ekjahan-bg.png"
               alt="Ekjahan Enterprises"
               className="h-[40px] object-contain transition-all hover:scale-105"
             />
@@ -75,9 +72,7 @@ const Navigation = () => {
 
           <Link href="/">
             <img
-              src={`${
-                process.env.NODE_ENV === "production" ? "/next-ekjahan" : ""
-              }/images/ekjahpar-bg.png`}
+              src="/images/ekjahpar-bg.png"
               alt="Partnership"
               className="h-[40px] object-contain transition-all hover:scale-105"
             />
