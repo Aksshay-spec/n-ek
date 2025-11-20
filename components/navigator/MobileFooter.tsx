@@ -5,11 +5,18 @@ import { usePathname } from "next/navigation";
 import { FaHome } from "react-icons/fa";
 import { RiShieldCheckFill } from "react-icons/ri";
 import { FaBriefcase, FaBars } from "react-icons/fa";
+import React from "react";
 
-const FooterNavigation = () => {
+interface NavItem {
+  name: string;
+  path: string;
+  icon: React.ReactNode;
+}
+
+const MobileFooter: React.FC = () => {
   const pathname = usePathname();
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { name: "Home", path: "/", icon: <FaHome /> },
     { name: "Warranty", path: "/warranty", icon: <RiShieldCheckFill /> },
     { name: "Career", path: "/career", icon: <FaBriefcase /> },
@@ -55,4 +62,4 @@ const FooterNavigation = () => {
   );
 };
 
-export default FooterNavigation;
+export default MobileFooter;

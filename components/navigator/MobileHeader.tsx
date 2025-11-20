@@ -8,7 +8,7 @@ import { FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 
-const Navigation = () => {
+const MobileHeader: React.FC = () => {
   return (
     <>
       {/* TOP SOCIAL MEDIA SECTION */}
@@ -20,36 +20,42 @@ const Navigation = () => {
           >
             <IoIosCall />
           </Link>
+
           <Link
             className="text-[#eb5a25] text-xs hover:scale-110 transition-transform"
             href="#"
           >
             <FaXTwitter />
           </Link>
+
           <Link
             className="text-[#eb5a25] text-xs hover:scale-110 transition-transform"
             href="#"
           >
             <FaInstagram />
           </Link>
+
           <Link
             className="text-[#eb5a25] text-xs hover:scale-110 transition-transform"
             href="#"
           >
             <FaFacebook />
           </Link>
+
           <Link
             className="text-[#eb5a25] text-xs hover:scale-110 transition-transform"
             href="#"
           >
             <FaYoutube />
           </Link>
+
           <Link
             className="text-[#eb5a25] text-xs hover:scale-110 transition-transform"
             href="#"
           >
             <ImWhatsapp />
           </Link>
+
           <Link
             className="text-[#eb5a25] text-xs hover:scale-110 transition-transform"
             href="#"
@@ -83,4 +89,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default MobileHeader;

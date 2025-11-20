@@ -1,11 +1,14 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 
 const TrendingProducts = () => {
-  const totalTrending = 10;
-  const visibleCount = 5;
-  const [trendIndex, setTrendIndex] = useState(0);
-  const trendingProducts = Array.from(
+  const totalTrending: number = 10;
+  const visibleCount: number = 5;
+
+  const [trendIndex, setTrendIndex] = useState<number>(0);
+
+  const trendingProducts: number[] = Array.from(
     { length: totalTrending },
     (_, i) => i + 1
   );
@@ -16,11 +19,11 @@ const TrendingProducts = () => {
   let touchStartX = 0;
   let touchEndX = 0;
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     touchStartX = e.changedTouches[0].clientX;
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     touchEndX = e.changedTouches[0].clientX;
     handleSwipe();
   };
@@ -28,12 +31,12 @@ const TrendingProducts = () => {
   const handleSwipe = () => {
     const swipeDistance = touchEndX - touchStartX;
 
-    // Swipe left → next item
+    // 👉 Swipe left → next
     if (swipeDistance < -50) {
       setTrendIndex((prev) => (prev + 1) % totalTrending);
     }
 
-    // Swipe right → previous item
+    // 👉 Swipe right → previous
     if (swipeDistance > 50) {
       setTrendIndex((prev) => (prev === 0 ? totalTrending - 1 : prev - 1));
     }
@@ -41,10 +44,10 @@ const TrendingProducts = () => {
   // -----------------------------
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setTrendIndex((prev) => (prev + 1) % totalTrending),
-      2500
-    );
+    const interval = setInterval(() => {
+      setTrendIndex((prev) => (prev + 1) % totalTrending);
+    }, 2500);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -66,7 +69,7 @@ const TrendingProducts = () => {
             width: `${(totalTrending / visibleCount) * 100}%`,
           }}
         >
-          {trendingProducts.map((n) => (
+          {trendingProducts.map((n: number) => (
             <div key={n} className="w-[20%] flex-shrink-0 flex justify-center">
               <div className="w-28 h-28 border-2 border-dashed border-black rounded-full"></div>
             </div>

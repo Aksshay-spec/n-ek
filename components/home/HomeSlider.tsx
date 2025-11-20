@@ -1,19 +1,21 @@
 "use client";
+
 import React, { useEffect, useState, useRef } from "react";
 
-const HomeSlider = () => {
-  const [index, setIndex] = useState(0);
-  const totalSlides = 3;
+const HomeSlider: React.FC = () => {
+  const [index, setIndex] = useState<number>(0);
+  const totalSlides: number = 3;
 
-  // For swipe detection
-  const startX = useRef(0);
-  const endX = useRef(0);
+  // Swipe detection refs
+  const startX = useRef<number>(0);
+  const endX = useRef<number>(0);
 
-  const handleTouchStart = (e) => {
+  // Touch Handlers
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     startX.current = e.touches[0].clientX;
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     endX.current = e.touches[0].clientX;
   };
 
@@ -21,19 +23,19 @@ const HomeSlider = () => {
     const distance = startX.current - endX.current;
 
     if (distance > 50) {
-      // swipe left → NEXT
+      // swipe left → next slide
       setIndex((prev) => (prev + 1) % totalSlides);
     } else if (distance < -50) {
-      // swipe right → PREVIOUS
+      // swipe right → previous slide
       setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
     }
 
-    // reset
+    // Reset
     startX.current = 0;
     endX.current = 0;
   };
 
-  // Auto sliding
+  // Auto slide
   useEffect(() => {
     const interval = setInterval(
       () => setIndex((prev) => (prev + 1) % totalSlides),
@@ -42,13 +44,10 @@ const HomeSlider = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // const base = "{`${process.env.NODE_ENV === "production" ? "/next-ekjahan" : ""}";
-
   return (
     <section className="relative text-white overflow-hidden">
       <div
         className="relative h-[400px] sm:h-[500px] md:h-[650px] w-full overflow-hidden"
-        // 👇 swipe handlers added here
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -64,11 +63,15 @@ const HomeSlider = () => {
                 alt={`Slide ${i + 1}`}
                 className="absolute inset-0 w-full h-full object-cover"
               />
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/80 to-transparent"></div>
+
+              {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end items-center text-center px-4 sm:px-6 pb-8 sm:pb-24">
                 <h2 className="text-yellow-400 text-base underline underline-offset-8 sm:text-xl font-semibold mb-2">
                   Ekjahan Enterprises
                 </h2>
+
                 <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight mb-4">
                   {i === 0 && (
                     <>
@@ -89,6 +92,7 @@ const HomeSlider = () => {
                     </>
                   )}
                 </h1>
+
                 <p className="max-w-2xl text-sm sm:text-base md:text-lg mb-6">
                   {i === 0 &&
                     "Electricity powers homes. We power trust. Food fuels families. We nourish lives."}
@@ -97,6 +101,7 @@ const HomeSlider = () => {
                   {i === 2 &&
                     "From power tools to provisions, we're committed to excellence and reliability."}
                 </p>
+
                 <button className="bg-[#ff5e5e] hover:bg-[#ff7373] text-white px-5 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition">
                   Join Us Today
                 </button>
@@ -105,7 +110,7 @@ const HomeSlider = () => {
           ))}
         </div>
 
-        {/* Left arrow */}
+        {/* Left Arrow */}
         <button
           onClick={() =>
             setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
@@ -115,7 +120,7 @@ const HomeSlider = () => {
           ‹
         </button>
 
-        {/* Right arrow */}
+        {/* Right Arrow */}
         <button
           onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
           className="absolute right-4 top-1/2 -translate-y-1/2 border-2 border-[#27cfa8] text-[#27cfa8] w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-105"

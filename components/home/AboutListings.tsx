@@ -1,9 +1,20 @@
 "use client";
 
+import React from "react";
 import { FaBoxOpen, FaLightbulb, FaShieldAlt } from "react-icons/fa";
 import { PiFireExtinguisher } from "react-icons/pi";
+import { IconType } from "react-icons/lib";
 
-const listings = [
+// Type for each listing item
+interface ListingItem {
+  icon: JSX.Element;
+  bgColor: string;
+  title: string;
+  description: string;
+}
+
+// Listings array with type
+const listings: ListingItem[] = [
   {
     icon: <FaBoxOpen className="text-white text-4xl" />,
     bgColor: "bg-[#ff6b6b]",
@@ -30,7 +41,7 @@ const listings = [
   },
 ];
 
-export default function AboutListings() {
+export default function AboutListings(): JSX.Element {
   return (
     <section className="py-12 px-6 sm:px-12 bg-white">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

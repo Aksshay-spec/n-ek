@@ -3,8 +3,12 @@
 import Image from "next/image";
 import { FaHandshake, FaChartLine, FaBoxOpen } from "react-icons/fa";
 import { IoStorefrontOutline } from "react-icons/io5";
+import React from "react";
 
-export default function PartnerWithUsSection() {
+// If you want props later, define an interface here (currently unused)
+interface PartnerWithUsSectionProps {}
+
+export default function PartnerWithUsSection({}: PartnerWithUsSectionProps) {
   return (
     <section className="bg-white py-10 px-6 text-center">
       <h2 className="text-3xl font-extrabold text-black">Partner With Us</h2>

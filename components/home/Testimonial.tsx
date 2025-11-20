@@ -3,8 +3,16 @@
 import { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
+interface TestimonialItem {
+  id: number;
+  name: string;
+  text: string;
+  rating: number;
+  bg: string;
+}
+
 const Testimonial = () => {
-  const testimonials = [
+  const testimonials: TestimonialItem[] = [
     {
       id: 1,
       name: "Contractor, Indore",
@@ -42,17 +50,17 @@ const Testimonial = () => {
     },
   ];
 
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState<number>(0);
 
   // Swipe logic
   let touchStartX = 0;
   let touchEndX = 0;
 
-  const onTouchStart = (e) => {
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     touchStartX = e.changedTouches[0].clientX;
   };
 
-  const onTouchEnd = (e) => {
+  const onTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     touchEndX = e.changedTouches[0].clientX;
     handleSwipe();
   };
@@ -68,7 +76,7 @@ const Testimonial = () => {
     }
   };
 
-  // Auto slide
+  // Auto Slide
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);

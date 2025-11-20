@@ -4,8 +4,15 @@ import React, { useEffect, useState, useRef } from "react";
 import { FaBolt } from "react-icons/fa";
 import { FaShoppingBasket } from "react-icons/fa";
 
-const SkuSection = () => {
-  const skuItems = [
+// Define TypeScript type for SKU items
+interface SkuItem {
+  count: string;
+  title: string;
+  icon: React.ReactNode;
+}
+
+const SkuSection: React.FC = () => {
+  const skuItems: SkuItem[] = [
     {
       count: "150+",
       title: "Electrical SKUs",
@@ -50,16 +57,18 @@ const SkuSection = () => {
 
   const totalSku = skuItems.length;
   const visibleSkuCount = 4;
-  const [skuIndex, setSkuIndex] = useState(0);
 
-  const startX = useRef(0);
-  const endX = useRef(0);
+  const [skuIndex, setSkuIndex] = useState<number>(0);
 
-  const handleTouchStart = (e) => {
+  const startX = useRef<number>(0);
+  const endX = useRef<number>(0);
+
+  // TOUCH EVENTS WITH TYPES
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     startX.current = e.touches[0].clientX;
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     endX.current = e.touches[0].clientX;
   };
 
@@ -82,7 +91,7 @@ const SkuSection = () => {
       3000
     );
     return () => clearInterval(interval);
-  }, []);
+  }, [totalSku]);
 
   return (
     <section className="bg-white py-8 text-center">

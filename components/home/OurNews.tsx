@@ -4,8 +4,14 @@ import { useState, useEffect } from "react";
 import { FaUsers } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
+interface NewsItem {
+  id: number;
+  title: string;
+  publication: string;
+}
+
 export default function OurNews() {
-  const newsItems = [
+  const newsItems: NewsItem[] = [
     {
       id: 1,
       title: "Top 10 Electrical Brands in Central India",
@@ -28,7 +34,8 @@ export default function OurNews() {
     },
   ];
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number>(0);
+
   const total = newsItems.length;
 
   useEffect(() => {
@@ -65,8 +72,8 @@ export default function OurNews() {
         {/* Left Arrow */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-10 bg-white border border-gray-300 w-10 h-10
-          rounded-full flex items-center justify-center shadow-md z-10"
+          className="absolute left-2 sm:left-10 bg-white border border-gray-300 
+          w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10"
         >
           <IoIosArrowBack size={22} />
         </button>
@@ -100,8 +107,8 @@ export default function OurNews() {
         {/* Right Arrow */}
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-10 bg-white border border-gray-300 w-10 h-10
-          rounded-full flex items-center justify-center shadow-md z-10"
+          className="absolute right-2 sm:right-10 bg-white border border-gray-300
+          w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10"
         >
           <IoIosArrowForward size={22} />
         </button>

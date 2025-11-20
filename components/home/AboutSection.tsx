@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const AboutSection = () => {
+const AboutSection: React.FC = () => {
   return (
     <section className="relative w-full h-[450px] sm:h-[500px] md:h-[600px] overflow-hidden">
       {/* Background Image */}

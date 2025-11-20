@@ -1,10 +1,19 @@
-import { FaShieldAlt } from "react-icons/fa";
-import { FaMedal } from "react-icons/fa";
+"use client";
+
+import React from "react";
+import { FaShieldAlt, FaMedal } from "react-icons/fa";
 import { RiLock2Fill } from "react-icons/ri";
 import { GiJusticeStar } from "react-icons/gi";
 
+// Define TypeScript type for each policy item
+interface PolicyItem {
+  icon: React.ReactNode;
+  bg: string;
+  title: string;
+}
+
 export default function Policies() {
-  const items = [
+  const items: PolicyItem[] = [
     {
       icon: <FaShieldAlt className="text-red-500 text-5xl" />,
       bg: "bg-green-100",

@@ -1,8 +1,16 @@
 "use client";
 
+import React from "react";
 import { FaBoxes, FaWarehouse, FaCubes, FaUndoAlt } from "react-icons/fa";
 
-const stats = [
+// Type definition for each stat item
+interface StatItem {
+  icon: React.ReactNode;
+  number: string;
+  text: string;
+}
+
+const stats: StatItem[] = [
   {
     icon: <FaBoxes className="text-white text-4xl" />,
     number: "40+",

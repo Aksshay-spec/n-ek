@@ -1,9 +1,10 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { FaFireExtinguisher } from "react-icons/fa";
 
-export default function FmcgSection() {
+const FmcgSection: React.FC = () => {
   return (
     <section className="bg-white py-12 text-center">
       <h2 className="text-3xl md:text-4xl font-extrabold text-black">
@@ -22,7 +23,7 @@ export default function FmcgSection() {
 
       <div className="mt-10">
         <Image
-          src="/images/3.png" 
+          src="/images/3.png"
           alt="Ekjahan FMCG Products"
           width={500}
           height={500}
@@ -31,4 +32,6 @@ export default function FmcgSection() {
       </div>
     </section>
   );
-}
+};
+
+export default FmcgSection;

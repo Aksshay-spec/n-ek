@@ -1,14 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import "../css-files/OurJourney.css";
+
+interface Star {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  duration: number;
+  delay: number;
+}
+
+interface TimelineItem {
+  year: string;
+  text: string;
+  position: "left" | "right";
+  colors: string;
+}
 
 export default function OurJourney() {
-  const [stars, setStars] = useState([]);
+  const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
     const generateStars = () => {
-      const newStars = [];
+      const newStars: Star[] = [];
       for (let i = 0; i < 50; i++) {
         newStars.push({
           id: i,
@@ -24,7 +39,7 @@ export default function OurJourney() {
     generateStars();
   }, []);
 
-  const timelineData = [
+  const timelineData: TimelineItem[] = [
     {
       year: "2012",
       text: "SAPTAAR launched",
