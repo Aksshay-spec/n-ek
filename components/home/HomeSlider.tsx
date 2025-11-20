@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import SecondaryButton from "../buttons/SecondaryButton";
 
 const HomeSlider: React.FC = () => {
   const [index, setIndex] = useState<number>(0);
@@ -102,9 +103,15 @@ const HomeSlider: React.FC = () => {
                     "From power tools to provisions, we're committed to excellence and reliability."}
                 </p>
 
-                <button className="bg-[#ff5e5e] hover:bg-[#ff7373] text-white px-5 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition">
+                {/* <button className="bg-[#ff5e5e] hover:bg-[#ff7373] text-white px-5 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition">
                   Join Us Today
-                </button>
+                </button> */}
+                <SecondaryButton
+                  label="Join Us Today"
+                  bgColor="#ff5e5e"
+                  textColor="white"
+                  
+                />
               </div>
             </div>
           ))}

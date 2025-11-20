@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import SecondaryButton from "../buttons/SecondaryButton";
 
 const AboutSection: React.FC = () => {
   return (
@@ -33,9 +34,14 @@ const AboutSection: React.FC = () => {
             potenti, nulla facilisi in aliquet pulvinar risus.
           </p>
 
-          <button className="mt-4 px-6 py-3 bg-[#ff4c4c] hover:bg-[#e03e3e] text-white font-semibold rounded-full transition">
+          {/* <button className="mt-4 px-6 py-3 bg-[#ff4c4c] hover:bg-[#e03e3e] text-white font-semibold rounded-full transition">
             Join Us Today
-          </button>
+          </button> */}
+          <SecondaryButton
+            label="Join Us Today"
+            bgColor="#ff5e5e"
+            textColor="white"
+          />
         </div>
       </div>
     </section>

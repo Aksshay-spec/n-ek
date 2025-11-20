@@ -3,6 +3,7 @@
 import React from "react";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { FaSyncAlt, FaChartBar, FaTags } from "react-icons/fa";
+import PrimaryButton from "../buttons/PrimaryButton";
 
 const DistributorBenefitSection: React.FC = () => {
   return (
@@ -51,9 +52,14 @@ const DistributorBenefitSection: React.FC = () => {
       </div>
 
       {/* CTA */}
-      <button className="mt-10 bg-[#9efff2] text-black font-bold py-3 px-8 rounded-2xl shadow-md hover:opacity-90 transition">
+      {/* <button className="mt-10 bg-[#9efff2] text-black font-bold py-3 px-8 rounded-2xl shadow-md hover:opacity-90 transition">
         Join Us As Distributor
-      </button>
+      </button> */}
+      <PrimaryButton
+        label="Join Us As Distributor"
+        bgColor="#9efff2"
+        textColor="text-black"
+      />
     </section>
   );
 };

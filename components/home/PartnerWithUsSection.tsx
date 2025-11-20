@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaHandshake, FaChartLine, FaBoxOpen } from "react-icons/fa";
 import { IoStorefrontOutline } from "react-icons/io5";
 import React from "react";
+import PrimaryButton from "../buttons/PrimaryButton";
 
 // If you want props later, define an interface here (currently unused)
 interface PartnerWithUsSectionProps {}
@@ -60,9 +61,14 @@ export default function PartnerWithUsSection({}: PartnerWithUsSectionProps) {
         </div>
       </div>
 
-      <button className="bg-[#ff6b6b] hover:bg-[#ff4a4a] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-md transition duration-300">
+      {/* <button className="bg-[#ff6b6b] hover:bg-[#ff4a4a] text-white font-semibold py-3 px-8 rounded-full text-lg shadow-md transition duration-300">
         Join Us As Vendor
-      </button>
+      </button> */}
+      <PrimaryButton
+        label="Join Us As Vendor"
+        bgColor="#ff6b6b"
+        textColor="#FFFFFF"
+      />
     </section>
   );
 }
