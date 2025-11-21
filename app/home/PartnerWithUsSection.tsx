@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaHandshake, FaChartLine, FaBoxOpen } from "react-icons/fa";
 import { IoStorefrontOutline } from "react-icons/io5";
 import React from "react";
-import PrimaryButton from "../buttons/PrimaryButton";
+import PrimaryButton from "@/components/buttons/PrimaryButton";
 
 // If you want props later, define an interface here (currently unused)
 interface PartnerWithUsSectionProps {}

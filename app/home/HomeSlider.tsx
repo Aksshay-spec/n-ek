@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import SecondaryButton from "../buttons/SecondaryButton";
+import SecondaryButton from "@/components/buttons/SecondaryButton";
 
 const HomeSlider: React.FC = () => {
   const [index, setIndex] = useState<number>(0);
@@ -110,7 +110,6 @@ const HomeSlider: React.FC = () => {
                   label="Join Us Today"
                   bgColor="#ff5e5e"
                   textColor="white"
-                  
                 />
               </div>
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SecondaryButton from "../buttons/SecondaryButton";
+import SecondaryButton from "@/components/buttons/SecondaryButton";
 
 const AboutSection: React.FC = () => {
   return (

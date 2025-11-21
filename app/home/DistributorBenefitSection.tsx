@@ -3,7 +3,7 @@
 import React from "react";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { FaSyncAlt, FaChartBar, FaTags } from "react-icons/fa";
-import PrimaryButton from "../buttons/PrimaryButton";
+import PrimaryButton from "@/components/buttons/PrimaryButton";
 
 const DistributorBenefitSection: React.FC = () => {
   return (
